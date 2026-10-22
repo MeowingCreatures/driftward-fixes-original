@@ -26,6 +26,7 @@
     "VeilFramebufferStackMixin",
     "aeronautics.BalloonAccessor",
     "aeronautics.BalloonTemperatureMixin",
+    "betterend.BaseDrinkItemMixin",
     "betterend.CrashedShipFeatureMixin",
     "betterend.CrashedShipFeatureReplacerMixin",
     "betterend.EndEnchantmentsMixin",
