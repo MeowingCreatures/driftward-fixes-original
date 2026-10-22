@@ -71,6 +71,8 @@
     "client.LavenderStructureOverlayRendererMixin",
     "client.jeed.EffectInfoMixin",
     "client.jeed.EffectRendererMixin",
+    "client.tooltips.DisableTooltipInjectionMixin",
+    "client.tooltips.HideModifierListMixin",
     "modonomicon.SimpleRenderMixin",
     "modonomicon.BookCategoryIndexScreenMixin",
     "modonomicon.SimpleClickMixin",
