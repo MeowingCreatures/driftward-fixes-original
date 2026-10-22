@@ -12,6 +12,7 @@
     "CatSitOnComputerMixin",
     "ContraptionColliderMixin",
     "DeployerHandlerMixin",
+    "DrinkSoundMixin",
     "EmiLootLootJSCompat",
     "EmiRecipeOrderMixin",
     "EnableBundlesMixin",
