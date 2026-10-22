@@ -30,7 +30,6 @@
     "betterend.EndEnchantmentsMixin",
     "betterend.NBTFeatureMixin",
     "betterend.StructureErodeMixin",
-    "betterend_silk.SilkMothEntityMixin",
     "betterend_silk.SilkMothHiveBlockMixin",
     "betterend_silk.SilkMothNestBlockMixin",
     "chunk_unloading.ChunkMapMixin",
