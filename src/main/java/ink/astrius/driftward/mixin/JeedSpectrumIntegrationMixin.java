@@ -4,21 +4,25 @@ import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import de.dafuqs.spectrum.recipe.potion_workshop.PotionWorkshopBrewingRecipe;
 import de.dafuqs.spectrum.registries.SpectrumRecipeTypes;
-import java.util.ArrayList;
-import java.util.List;
-import net.mehvahdjukaar.jeed.common.EffectInfo;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.mehvahdjukaar.jeed.Jeed;
+import net.mehvahdjukaar.jeed.common.EffectInfo;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.Mixin;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static net.mehvahdjukaar.jeed.common.Constants.ID_COMPARATOR;
 
+@Restriction(require = @Condition("jeed"))
 @Mixin(EffectInfo.class)
 public class JeedSpectrumIntegrationMixin {
     @Redirect(

@@ -59,11 +59,15 @@ public class CrystallarieumAmberCompat {
         "pure_amber"
     );
 
-    public void register(IEventBus modBus) {
+    public void register() {
         NeoForge.EVENT_BUS.addListener(CrystallarieumAmberCompat::addItemsToSubTabs);
     }
 
-    public void registerClient(FMLClientSetupEvent event) {
+    public void registerClient(IEventBus modBus) {
+        modBus.addListener(this::onClientSetup);
+    }
+
+    public void onClientSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(SMALL_AMBER_BUD.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(LARGE_AMBER_BUD.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(AMBER_CLUSTER.get(), RenderType.cutout());

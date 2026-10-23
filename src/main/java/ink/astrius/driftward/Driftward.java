@@ -4,13 +4,14 @@ import com.sashafiesta.ccterminals.TerminalBlock;
 import ink.astrius.driftward.config.ClientConfig;
 import ink.astrius.driftward.config.ServerConfig;
 import ink.astrius.driftward.grindstone.GrindstoneHandler;
+import ink.astrius.driftward.kube.DriftwardKubeJSPlugin;
 import ink.astrius.driftward.reg.CrystallarieumAmberCompat;
 import ink.astrius.driftward.reg.DriftwardReg;
+import ink.astrius.driftward.reg.ModLoaded;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.config.ModConfigEvent;
@@ -22,29 +23,32 @@ import org.jetbrains.annotations.Nullable;
 public class Driftward {
     public static final String MOD_ID = "driftward";
 
-    public static final CrystallarieumAmberCompat crystallarieumAmberCompat = ModList.get().isLoaded("spectrum") && ModList.get().isLoaded("betterend")
+    public static final CrystallarieumAmberCompat crystallarieumAmberCompat = ModLoaded.SPECTRUM && ModLoaded.BETTER_END
         ? new CrystallarieumAmberCompat()
         : null;
 
     public static @Nullable TerminalBlock TERMINAL_NORMAL;
     public static @Nullable TerminalBlock TERMINAL_ADVANCED;
 
-    public Driftward(IEventBus modEventBus, ModContainer container) {
+    public Driftward(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
         container.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
-        modEventBus.addListener(Driftward::onSetup);
-        modEventBus.addListener(Driftward::onConfigLoad);
-        modEventBus.addListener(Driftward::onConfigReload);
-        DriftwardReg.register(modEventBus);
+        modBus.addListener(Driftward::onSetup);
+        modBus.addListener(Driftward::onConfigLoad);
+        modBus.addListener(Driftward::onConfigReload);
+        DriftwardReg.register(modBus);
         NeoForge.EVENT_BUS.addListener(GrindstoneHandler::grindstoneEventHandler);
         if (crystallarieumAmberCompat != null) {
-            crystallarieumAmberCompat.register(modEventBus);
+            crystallarieumAmberCompat.register();
+        }
+        if (ModLoaded.KUBEJS) {
+            DriftwardKubeJSPlugin.register(modBus);
         }
     }
 
     public static void onSetup(final FMLCommonSetupEvent event) {
-        Cobblegen.register();
-        if (ModList.get().isLoaded("ccterminals")) {
+        Cobblegen.onSetup();
+        if (ModLoaded.CC_TERMINALS) {
             TERMINAL_NORMAL = (TerminalBlock) BuiltInRegistries.BLOCK.get(
                 ResourceLocation.fromNamespaceAndPath("ccterminals", "terminal_normal")
             );

@@ -45,11 +45,11 @@ public class DriftwardReg {
         return res;
     }
 
-    public static void register(IEventBus modEventBus) {
-        BLOCKS.register(modEventBus);
-        ITEMS.register(modEventBus);
-        CRITERIA_TRIGGERS.register(modEventBus);
-        RECIPE_SERIALIZERS.register(modEventBus);
-        RECIPE_TYPES.register(modEventBus);
+    public static void register(IEventBus modBus) {
+        BLOCKS.register(modBus);
+        ITEMS.register(modBus);
+        CRITERIA_TRIGGERS.register(modBus);
+        RECIPE_SERIALIZERS.register(modBus);
+        RECIPE_TYPES.register(modBus);
     }
 }

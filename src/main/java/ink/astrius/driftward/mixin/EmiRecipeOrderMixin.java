@@ -7,12 +7,15 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.registry.EmiRecipes;
 import ink.astrius.driftward.DriftwardEmi;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.List;
 import java.util.stream.Stream;
 
+@Restriction(require = @Condition("emi"))
 @Mixin(EmiRecipes.class)
 public class EmiRecipeOrderMixin {
     @Definition(id = "recipes", field = "Ldev/emi/emi/registry/EmiRecipes;recipes:Ljava/util/List;")

@@ -33,3 +33,6 @@ ordering = "AFTER"
 
 [[dependencies.driftward]]
 modId = "lmft"
+
+[[dependencies.driftward]]
+modId = "emi"

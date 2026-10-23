@@ -9,9 +9,12 @@ import com.klikli_dev.modonomicon.client.gui.book.search.BookSearchScreen;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import ink.astrius.driftward.modonomicon.IScaleFactor;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.client.gui.GuiGraphics;
 import org.spongepowered.asm.mixin.Mixin;
 
+@Restriction(require = @Condition("modonomicon"))
 @Mixin({
     BookCategoryIndexOnNodeScreen.class,
     BookBookmarksScreen.class,

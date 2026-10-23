@@ -1,5 +1,7 @@
 package ink.astrius.driftward.mixin;
 
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -11,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import tech.alexnijjar.endermanoverhaul.common.entities.base.BaseEnderman;
 
+@Restriction(require = @Condition("endermanoverhaul"))
 @Mixin(BaseEnderman.class)
 public class EndermanOverhaulEndVeilMixin {
     @Inject(method = "isLookingAtMe", at = @At("HEAD"), cancellable = true)

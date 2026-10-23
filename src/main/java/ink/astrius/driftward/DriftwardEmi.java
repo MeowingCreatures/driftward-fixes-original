@@ -7,6 +7,7 @@ import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import ink.astrius.driftward.grindstone.DisenchantingEmiRecipe;
 import ink.astrius.driftward.kube.DriftwardKubeJSPlugin;
+import ink.astrius.driftward.reg.ModLoaded;
 import ink.astrius.driftward.trickster.TricksterGatedEmiRecipes;
 
 import java.util.ArrayList;
@@ -19,14 +20,20 @@ public class DriftwardEmi implements EmiPlugin {
     @Override
     public void initialize(EmiInitRegistry registry) {
         prependRecipes = new ArrayList<>();
-        DriftwardKubeJSPlugin.initEmi(registry);
+        if (ModLoaded.KUBEJS) {
+            DriftwardKubeJSPlugin.initEmi(registry);
+        }
     }
 
     @Override
     public void register(EmiRegistry registry) {
-        DisenchantingEmiRecipe.register(registry);
-        TricksterGatedEmiRecipes.register(registry);
+        DisenchantingEmiRecipe.registerEmi(registry);
         Cobblegen.registerEmi(registry);
-        CrystaliteElytraRepairRecipeFix.register(registry);
+        if (ModLoaded.TRICKSTER) {
+            TricksterGatedEmiRecipes.registerEmi(registry);
+        }
+        if (ModLoaded.BETTER_END) {
+            CrystaliteElytraRepairRecipeFix.registerEmi(registry);
+        }
     }
 }

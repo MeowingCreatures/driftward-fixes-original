@@ -5,20 +5,20 @@ import de.dafuqs.spectrum.compat.emi.recipes.SpectrumWorldInteractionRecipe;
 import de.dafuqs.spectrum.recipe.anvil_crushing.AnvilCrushingRecipe;
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.stack.EmiStack;
+import ink.astrius.driftward.reg.ModLoaded;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.fml.ModList;
 
 import java.util.List;
 import java.util.Optional;
 
 public class TricksterGatedEmiRecipes {
-    public static void register(EmiRegistry registry) {
-        if (!ModList.get().isLoaded("trickster") || !ModList.get().isLoaded("spectrum")) {
+    public static void registerEmi(EmiRegistry registry) {
+        if (!ModLoaded.TRICKSTER || !ModLoaded.SPECTRUM) {
             return;
         }
         final var tormentCoreShell = BuiltInRegistries.ITEM.get(ResourceLocation.parse(

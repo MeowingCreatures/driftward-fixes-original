@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.FluidInteractionRegistry;
 
 public class Cobblegen {
-    public static void register() {
+    public static void onSetup() {
         FluidInteractionRegistry.addInteraction(
             NeoForgeMod.LAVA_TYPE.value(),
             new FluidInteractionRegistry.InteractionInformation(
@@ -22,6 +22,7 @@ public class Cobblegen {
             )
         );
     }
+
     public static void registerEmi(EmiRegistry registry) {
         registry.removeRecipes(ResourceLocation.fromNamespaceAndPath(
             "emi", "/world/fluid_interaction/minecraft/cobblestone"

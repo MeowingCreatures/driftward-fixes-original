@@ -1,20 +1,21 @@
 package ink.astrius.driftward.mixin.betterend;
 
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.betterx.bclib.items.BaseDrinkItem;
 import org.betterx.bclib.items.ModelProviderItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
+@Restriction(require = @Condition("betterend"))
 @Mixin(BaseDrinkItem.class)
 public class BaseDrinkItemMixin extends ModelProviderItem {
     public BaseDrinkItemMixin() {

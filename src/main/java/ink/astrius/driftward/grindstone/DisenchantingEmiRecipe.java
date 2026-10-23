@@ -20,7 +20,7 @@ public class DisenchantingEmiRecipe extends BasicEmiRecipe {
         outputs.add(EmiStack.of(recipe.value().result));
     }
 
-    public static void register(EmiRegistry registry) {
+    public static void registerEmi(EmiRegistry registry) {
         final var manager = registry.getRecipeManager();
         for (final var recipe : manager.getAllRecipesFor(DriftwardReg.DISENCHANTING_TYPE.get())) {
             registry.addRecipe(new DisenchantingEmiRecipe(recipe));

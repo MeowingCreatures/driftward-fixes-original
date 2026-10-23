@@ -2,6 +2,8 @@ package ink.astrius.driftward.mixin;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import foundry.veil.api.client.render.framebuffer.FramebufferStack;
+import me.fallenbreath.conditionalmixin.api.annotation.Condition;
+import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Vector4i;
 import org.spongepowered.asm.mixin.Final;
@@ -10,17 +12,16 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.nio.IntBuffer;
 import java.util.List;
 
 import static org.lwjgl.opengl.GL11C.glGetInteger;
 import static org.lwjgl.opengl.GL30C.*;
 
+@Restriction(require = @Condition("veil"))
 @Mixin(FramebufferStack.class)
 public class VeilFramebufferStackMixin {
     @Shadow
