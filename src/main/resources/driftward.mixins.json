@@ -54,6 +54,7 @@
     "frostiful.FEntityTypesMixin",
     "grindstone.GrindstoneInputSlotMixin",
     "grindstone.SupplementariesGrindstoneFixMixin",
+    "potions.EmiRemoveCreatePotions",
     "rope.RopeItemMixin",
     "rope.RopeScenesMixin",
     "rope.RopeStrandHolderBehaviorMixin",
@@ -76,10 +77,10 @@
     "client.jeed.EffectRendererMixin",
     "client.tooltips.DisableTooltipInjectionMixin",
     "client.tooltips.HideModifierListMixin",
-    "modonomicon.SimpleRenderMixin",
     "modonomicon.BookCategoryIndexScreenMixin",
+    "modonomicon.BookPaginatedScreenMixin",
     "modonomicon.SimpleClickMixin",
-    "modonomicon.BookPaginatedScreenMixin"
+    "modonomicon.SimpleRenderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
