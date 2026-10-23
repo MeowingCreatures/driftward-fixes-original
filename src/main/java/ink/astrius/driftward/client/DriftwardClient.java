@@ -16,5 +16,8 @@ public class DriftwardClient {
         if (ModLoaded.SPECTRUM) {
             FoodEffectTooltips.registerClient();
         }
+        if (ModLoaded.APPLESKIN && ModLoaded.SUPPLEMENTARIES) {
+            LunchBasketTooltipFix.registerClient();
+        }
     }
 }

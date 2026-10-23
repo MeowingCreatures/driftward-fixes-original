@@ -59,6 +59,7 @@ repositories {
     repository("https://maven.caffeinemc.net/releases", "net.caffeinemc")
     repository("https://maven.latvian.dev/releases", "dev.latvian.mods", "dev.latvian.apps")
     repository("https://dl.cloudsmith.io/public/klikli-dev/mods/maven", "com.klikli_dev")
+    repository("https://maven.ryanliptak.com", "squeek.appleskin")
 }
 
 neoForge {
@@ -85,6 +86,7 @@ neoForge {
 }
 
 dependencies {
+    implementation("squeek.appleskin:appleskin-neoforge:mc1.21-3.0.9:api")
     implementation("dev.latvian.mods:kubejs-neoforge:2101.7.2-build.377")
     implementation("net.caffeinemc:sodium-neoforge-api:0.8.13+mc1.21.1")
     implementation("maven.modrinth:critters-and-companions:kGomvo87")  // 2.6.2
