@@ -13,6 +13,7 @@
     "ContraptionColliderMixin",
     "DeployerHandlerMixin",
     "DrinkSoundMixin",
+    "EatInstantEffectMixin",
     "EmiLootLootJSCompat",
     "EmiRecipeOrderMixin",
     "EnableBundlesMixin",
