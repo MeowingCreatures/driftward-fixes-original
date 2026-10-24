@@ -26,6 +26,7 @@
     "LivingEntityAccessor",
     "LivingEntityMixin",
     "MelonJuiceMixin",
+    "RightClickHarvestMixin",
     "SweetBerryArmorMixin",
     "TickingBackportMixin",
     "TreeFeatureMixin",

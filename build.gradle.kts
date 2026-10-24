@@ -115,6 +115,7 @@ dependencies {
     runtimeOnly("maven.modrinth:moonlight:fAIfWX6M")  // 1.21.1-3.7.2
     implementation("maven.modrinth:lmft:poGMd0AE")  // 1.1.1+1.21.9
     implementation("maven.modrinth:spectrum:1.12.5-1.21.1-neo")
+    implementation("maven.modrinth:rightclickharvest:djt0zS53")
     compileOnly("maven.modrinth:critters-and-companions:kGomvo87")  // 2.6.2
     compileOnly("maven.modrinth:farmers-delight:1.21.1-1.3.2")
     compileOnly("maven.modrinth:creeper-overhaul:HNrAYCLH")  // 4.0.6
