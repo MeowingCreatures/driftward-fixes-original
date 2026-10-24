@@ -16,6 +16,7 @@
     "DisableNightVisionFlashMixin",
     "DrinkSoundMixin",
     "EatInstantEffectMixin",
+    "ExtendItemLifetimeMixin",
     "EmiLootLootJSCompat",
     "EmiRecipeOrderMixin",
     "EnableBundlesMixin",
