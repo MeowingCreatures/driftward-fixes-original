@@ -21,7 +21,6 @@
     "EnableBundlesMixin",
     "EndermanOverhaulEndVeilMixin",
     "ExtendItemLifetimeMixin",
-    "ForgeshotFileNameMixin",
     "GrowTinyCactusMixin",
     "JeedSpectrumIntegrationMixin",
     "LivingEntityAccessor",
@@ -65,6 +64,9 @@
     "rope.RopeStrandHolderBehaviorMixin",
     "rope.SimPonderScenesMixin",
     "rope.SimPonderTagsMixin",
+    "screenshots.ForgeshotFileNameMixin",
+    "screenshots.ScreenshotViewerConfigMixin",
+    "screenshots.ScreenshotViewerUtilsMixin",
     "tags.LMFTCommonAccessor",
     "tags.TagLoaderMixin",
     "wrench.IWrenchableMixin",
@@ -85,7 +87,8 @@
     "modonomicon.BookCategoryIndexScreenMixin",
     "modonomicon.BookPaginatedScreenMixin",
     "modonomicon.SimpleClickMixin",
-    "modonomicon.SimpleRenderMixin"
+    "modonomicon.SimpleRenderMixin",
+    "screenshots.ManageScreenshotsScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

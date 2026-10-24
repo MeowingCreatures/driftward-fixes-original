@@ -1,4 +1,4 @@
-package ink.astrius.driftward.mixin;
+package ink.astrius.driftward.mixin.screenshots;
 
 import com.carmellium.forgeshot.Mine;
 import net.minecraft.client.Minecraft;
