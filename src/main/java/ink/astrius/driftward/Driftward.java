@@ -10,6 +10,7 @@ import ink.astrius.driftward.reg.DriftwardReg;
 import ink.astrius.driftward.reg.ModLoaded;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -29,6 +30,7 @@ public class Driftward {
 
     public static @Nullable TerminalBlock TERMINAL_NORMAL;
     public static @Nullable TerminalBlock TERMINAL_ADVANCED;
+    public static @Nullable Item BAMBOO_SPIKES_TIPPED;
 
     public Driftward(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC);
@@ -54,6 +56,11 @@ public class Driftward {
             );
             TERMINAL_ADVANCED = (TerminalBlock) BuiltInRegistries.BLOCK.get(
                 ResourceLocation.fromNamespaceAndPath("ccterminals", "terminal_advanced")
+            );
+        }
+        if (ModLoaded.SUPPLEMENTARIES) {
+            BAMBOO_SPIKES_TIPPED = BuiltInRegistries.ITEM.get(
+                ResourceLocation.fromNamespaceAndPath("supplementaries", "bamboo_spikes_tipped")
             );
         }
     }

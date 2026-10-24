@@ -55,6 +55,7 @@
     "grindstone.GrindstoneInputSlotMixin",
     "grindstone.SupplementariesGrindstoneFixMixin",
     "potions.EmiRemoveCreatePotions",
+    "potions.EmiRemovePotions",
     "rope.RopeItemMixin",
     "rope.RopeScenesMixin",
     "rope.RopeStrandHolderBehaviorMixin",

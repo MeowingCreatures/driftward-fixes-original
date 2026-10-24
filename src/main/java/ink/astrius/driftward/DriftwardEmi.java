@@ -7,6 +7,7 @@ import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import ink.astrius.driftward.grindstone.DisenchantingEmiRecipe;
 import ink.astrius.driftward.kube.DriftwardKubeJSPlugin;
+import ink.astrius.driftward.potions.PotionsEmi;
 import ink.astrius.driftward.reg.ModLoaded;
 import ink.astrius.driftward.trickster.TricksterGatedEmiRecipes;
 
@@ -34,6 +35,9 @@ public class DriftwardEmi implements EmiPlugin {
         }
         if (ModLoaded.BETTER_END) {
             CrystaliteElytraRepairRecipeFix.registerEmi(registry);
+        }
+        if (ModLoaded.SPECTRUM) {
+            PotionsEmi.registerEmi(registry);
         }
     }
 }
