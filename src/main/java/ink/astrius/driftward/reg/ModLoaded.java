@@ -11,4 +11,6 @@ public class ModLoaded {
     public static final boolean CC_TERMINALS = ModList.get().isLoaded("ccterminals");
     public static final boolean BETTER_END = ModList.get().isLoaded("betterend");
     public static final boolean KUBEJS = ModList.get().isLoaded("kubejs");
+    public static final boolean CREEPER_OVERHAUL = ModList.get().isLoaded("creeperoverhaul");
+    public static final boolean EMI_LOOT = ModList.get().isLoaded("emi_loot");
 }
