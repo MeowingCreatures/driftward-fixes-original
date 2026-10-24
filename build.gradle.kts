@@ -76,6 +76,7 @@ neoForge {
         create("client") {
             client()
             gameDirectory = project.file("run/client")
+            environment("LD_LIBRARY_PATH", "/nix/store/iks5vikj342i6snxv7jcfbmxrvf6pqvg-minecraft-libs/lib")
         }
 
         create("server") {
@@ -86,43 +87,6 @@ neoForge {
 }
 
 dependencies {
-    implementation("squeek.appleskin:appleskin-neoforge:mc1.21-3.0.9:api")
-    implementation("dev.latvian.mods:kubejs-neoforge:2101.7.2-build.377")
-    implementation("net.caffeinemc:sodium-neoforge-api:0.8.13+mc1.21.1")
-    implementation("maven.modrinth:critters-and-companions:kGomvo87")  // 2.6.2
-    implementation("maven.modrinth:supplementaries:1.21.1-3.9.3")
-    implementation("maven.modrinth:farmers-delight:1.21.1-1.3.2")
-    implementation("maven.modrinth:just-enough-effect-descriptions-jeed:1.21-2.3.4")
-    implementation("maven.modrinth:creeper-overhaul:HNrAYCLH")  // 4.0.6
-    implementation("com.simibubi.create:create-1.21.1:6.0.10-280:slim") { isTransitive = false }
-    implementation("com.tterrag.registrate:Registrate:MC1.21-1.3.0+67")
-    implementation("dev.eriksonn.aeronautics:aeronautics-neoforge-1.21.1:1.3.0")
-    implementation("dev.ryanhcode.sable:sable-neoforge-1.21.1:2.0.3")
-    implementation("dev.simulated_team.simulated:simulated-neoforge-1.21.1:1.3.0")
-    runtimeOnly("mezz.jei:jei-1.21.1-neoforge:19.43.0.392")
-    implementation("cc.tweaked:cc-tweaked-1.21.1-forge:1.120.2")
-    implementation("maven.modrinth:cc-terminals:3VT1i1B2")  // 0.1.1
-    implementation("com.github.TheDeathlyCow:thermoo:v4.8.1-neoforge")
-    compileOnly("dev.yumi.mc.core:yumi-mc-foundation:1.0.0-beta.1+1.21.1") {
-        attributes {
-            attribute(Attribute.of("net.minecraft.mappings", String::class.java), "mojmap")
-        }
-    }
-    compileOnly("me.shedaniel.cloth:cloth-config-neoforge:15.0.140")
-    implementation("maven.modrinth:scorchful:0.15.2+1.21.1-neoforge")
-    implementation("maven.modrinth:frostiful:2.3.3+1.21.1-neoforge")
-    implementation("maven.modrinth:power-grid:8EtGIOFr")  // 0.5.5.1
-    implementation("maven.modrinth:yungs-better-end-island:1.21.1-NeoForge-3.1.2")
-    implementation("maven.modrinth:betterend-neoforge:21.0.34")
-    implementation("maven.modrinth:bclib-neoforge:21.0.26")
-    implementation("maven.modrinth:worldweaver-neoforge:21.0.25")
-    implementation("maven.modrinth:emi-loot:0.7.9+1.21+neoforge")
-    implementation("maven.modrinth:spectrum:1.12.5-1.21.1-neo")
-    implementation("maven.modrinth:fractal-lib:1.7.0+1.21.1-neoforge")
-    implementation("maven.modrinth:lmft:poGMd0AE")  // 1.1.1+1.21.9
-    implementation("dev.architectury:architectury-neoforge:13.0.8")
-    implementation("maven.modrinth:hybrid-aquatic:1.6.9-neoforge")
-    implementation("maven.modrinth:enderman-overhaul:2.0.3")
     implementation("com.klikli_dev:modonomicon-1.21.1-neoforge:1.120.7") {
         isTransitive = false
     }
@@ -137,7 +101,47 @@ dependencies {
     // linking to emi internals, as there seems to be no way to add missing recipes for hardcoded stuff
     // like anvil repair recipes, and we also mixin into them to change recipe order
     implementation("dev.emi:emi-neoforge:1.1.24+1.21.1")
-    runtimeOnly("maven.modrinth:moonlight:CitoQHqE")
+
+    implementation("squeek.appleskin:appleskin-neoforge:mc1.21-3.0.9:api")
+    implementation("dev.latvian.mods:kubejs-neoforge:2101.7.2-build.377")
+    compileOnly("net.caffeinemc:sodium-neoforge-api:0.8.13+mc1.21.1")
+    runtimeOnly("maven.modrinth:sodium:mc1.21.1-0.8.13-neoforge")
+    implementation("maven.modrinth:just-enough-effect-descriptions-jeed:1.21-2.3.4")
+    implementation("maven.modrinth:emi-loot:0.7.9+1.21+neoforge")
+
+    implementation("dev.architectury:architectury-neoforge:13.0.8")
+
+    implementation("maven.modrinth:supplementaries:rWq0ko29")  // 1.21.1-4.0.2
+    runtimeOnly("maven.modrinth:moonlight:fAIfWX6M")  // 1.21.1-3.7.2
+    implementation("maven.modrinth:lmft:poGMd0AE")  // 1.1.1+1.21.9
+    implementation("maven.modrinth:spectrum:1.12.5-1.21.1-neo")
+    compileOnly("maven.modrinth:critters-and-companions:kGomvo87")  // 2.6.2
+    compileOnly("maven.modrinth:farmers-delight:1.21.1-1.3.2")
+    compileOnly("maven.modrinth:creeper-overhaul:HNrAYCLH")  // 4.0.6
+    compileOnly("com.simibubi.create:create-1.21.1:6.0.10-280:slim") { isTransitive = false }
+    compileOnly("com.tterrag.registrate:Registrate:MC1.21-1.3.0+67")
+    compileOnly("dev.eriksonn.aeronautics:aeronautics-neoforge-1.21.1:1.3.0")
+    compileOnly("dev.ryanhcode.sable:sable-neoforge-1.21.1:2.0.3")
+    compileOnly("dev.simulated_team.simulated:simulated-neoforge-1.21.1:1.3.0")
+    compileOnly("cc.tweaked:cc-tweaked-1.21.1-forge:1.120.2")
+    compileOnly("maven.modrinth:cc-terminals:3VT1i1B2")  // 0.1.1
+    compileOnly("com.github.TheDeathlyCow:thermoo:v4.8.1-neoforge")
+    compileOnly("dev.yumi.mc.core:yumi-mc-foundation:1.0.0-beta.1+1.21.1") {
+        attributes {
+            attribute(Attribute.of("net.minecraft.mappings", String::class.java), "mojmap")
+        }
+    }
+    compileOnly("me.shedaniel.cloth:cloth-config-neoforge:15.0.140")
+    compileOnly("maven.modrinth:scorchful:0.15.2+1.21.1-neoforge")
+    compileOnly("maven.modrinth:frostiful:2.3.3+1.21.1-neoforge")
+    compileOnly("maven.modrinth:power-grid:8EtGIOFr")  // 0.5.5.1
+    compileOnly("maven.modrinth:yungs-better-end-island:1.21.1-NeoForge-3.1.2")
+    compileOnly("maven.modrinth:betterend-neoforge:21.0.34")
+    compileOnly("maven.modrinth:bclib-neoforge:21.0.26")
+    compileOnly("maven.modrinth:worldweaver-neoforge:21.0.25")
+    compileOnly("maven.modrinth:fractal-lib:1.7.0+1.21.1-neoforge")
+    compileOnly("maven.modrinth:hybrid-aquatic:1.6.9-neoforge")
+    compileOnly("maven.modrinth:enderman-overhaul:2.0.3")
     runtimeOnly("maven.modrinth:yacl:3.8.2+1.21.1-neoforge")
     runtimeOnly("maven.modrinth:geckolib:tPkJmim6")  // 4.9.2
     runtimeOnly("maven.modrinth:architectury-api:13.0.11+neoforge")
