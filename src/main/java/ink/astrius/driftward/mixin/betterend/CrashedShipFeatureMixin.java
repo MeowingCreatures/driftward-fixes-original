@@ -72,16 +72,4 @@ public class CrashedShipFeatureMixin {
             ((PedestalBlockEntity) te).setItem(1, elytra);
         }
     }
-
-    @Redirect(
-        method = "canSpawn",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/core/BlockPos;getX()I",
-            ordinal = 1
-        )
-    )
-    public int fixCanSpawnGetZ(BlockPos pos) {
-        return pos.getZ();
-    }
 }
