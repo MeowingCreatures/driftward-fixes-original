@@ -2,7 +2,7 @@ plugins {
     id("net.neoforged.moddev") version "2.0.148"
 }
 
-version = "1.49"
+version = "1.50"
 group = "ink.astrius"
 base { archivesName = "driftward-mod" }
 
